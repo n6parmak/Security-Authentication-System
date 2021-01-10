@@ -208,12 +208,20 @@ public class Client
         //KDCStart();
 
     }
-
     private static void Authenticate(String alice, String passwd, String serverID) throws FileNotFoundException {
-        Client client = new Client("127.0.0.1", 3000,alice,passwd,serverID);
-        Client client1 = new Client("127.0.0.1", 3001,alice,passwd,serverID);
-
+        Client client = new Client("127.0.0.1", 3000, alice, passwd, serverID);
+        int portnum = 0;
+        switch (serverID) {
+            case "Mail":
+                portnum = 3001;
+                break;
+            case "Web":
+                portnum = 3002;
+                break;
+            case "Database":
+                portnum = 3003;
+                break;
+        }
+        Client client1 = new Client("127.0.0.1", portnum, alice, passwd, serverID);
     }
-
-
 }

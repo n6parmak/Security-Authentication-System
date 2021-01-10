@@ -91,7 +91,7 @@ public class DatabaseServer
 
     public static void main(String args[]) throws FileNotFoundException {
 
-        DatabaseServer ms = new DatabaseServer(3001);
+        DatabaseServer ms = new DatabaseServer(3003);
 
     }
 }
